@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class MaritalStatusSelect extends Component
 {
-    public $maritalStatuses,$maritalStatus;
+    public $maritalStatuses,$maritalId;
     public function render()
     {
         $this->maritalStatuses = \App\Models\MaritalStatus::all();
@@ -16,6 +16,6 @@ class MaritalStatusSelect extends Component
     
     public function mount($status = null)
     {
-        if($status) $this->maritalStatus = MaritalStatus::find($status);
+        if($status = intval($status)) $this->maritalId = $status;
     }
 }

@@ -1,4 +1,4 @@
-<select name="marital_status" id="marital_status" class="form-input rounded-md shadow-sm block mt-1 w-full" required >
+<select name="marital_status" id="marital_status" class="form-input rounded-md shadow-sm block mt-1 w-full" required wire:model="maritalId">
     <option value="">Select one option</option>
 
     @foreach($maritalStatuses as $marital)

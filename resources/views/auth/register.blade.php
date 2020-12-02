@@ -40,7 +40,7 @@
 
             <div>
                 <x-jet-label for="interest_level" value="{{ __('Interest Level') }}" />
-                <livewire:interest-level-select :interest_level="old('interest_level')"/>
+                <livewire:interest-level-select :level="old('interest_level')"/>
             </div>
 
             <div>

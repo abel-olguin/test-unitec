@@ -16,10 +16,13 @@ class InterestLevelSelect extends Component
         return view('livewire.interest-level-select');
     }
     
-    public function mount(InterestLevel $level = null)
+    public function mount( $level = null)
     {
-        $this->parentId = $level->owner_id?:$level->id;
-        $this->childId = $level->owner_id?$level->id:null;
+        if($level && $level = InterestLevel::find(intval($level))){
+            $this->parentId = $level->owner_id?:$level->id;
+            $this->childId = $level->owner_id?$level->id:null;
+        }
+        
     }
     
     public function getParentProperty()
